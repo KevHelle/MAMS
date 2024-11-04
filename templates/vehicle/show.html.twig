@@ -1,42 +1,41 @@
+
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ 'vehicle.title'|trans }}{% endblock %}
+{% block title %}Vehicle{% endblock %}
 
 {% block body %}
-    <h1>{{ 'vehicle.header'|trans }}</h1>
+    <h1>Vehicle</h1>
 
     <table class="vehicle-table">
         <tbody>
-        <tr>
-            <th>{{ 'vehicle.id'|trans }}</th>
-            <td>{{ vehicle.id }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'vehicle.label'|trans }}</th>
-            <td>{{ vehicle.Label }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'vehicle.model'|trans }}</th>
-            <td>{{ vehicle.model }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'vehicle.plate'|trans }}</th>
-            <td>{{ vehicle.plate }}</td>
-        </tr>
-        <tr>
-            <th>{{ 'vehicle.fiscal_power'|trans }}</th>
-            <td>{{ vehicle.fiscalPower }}</td>
-        </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ vehicle.id }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ vehicle.Label }}</td>
+            </tr>
+            <tr>
+                <th>Modèle</th>
+                <td>{{ vehicle.model }}</td>
+            </tr>
+            <tr>
+                <th>Immatriculation</th>
+                <td>{{ vehicle.plate }}</td>
+            </tr>
+            <tr>
+                <th>Puissance_fiscale</th>
+                <td>{{ vehicle.fiscalPower }}</td>
+            </tr>
         </tbody>
     </table>
 
-    <a href="{{ path('app_vehicle_index') }}">
-        <button class="btnAppPerso">{{ 'vehicle.back_to_list'|trans }}</button>
-    </a>
 
-    <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}">
-        <button class="btnAppPerso">{{ 'vehicle.edit'|trans }}</button>
-    </a>
+
+    <a href="{{ path('app_vehicle_index') }}"><button class="btnAppPerso">Retour à la liste</button></a>
+
+    <a href="{{ path('app_vehicle_edit', {'id': vehicle.id}) }}"><button class="btnAppPerso">Modifier</button></a>
 
     {{ include('vehicle/_delete_form.html.twig') }}
 {% endblock %}
